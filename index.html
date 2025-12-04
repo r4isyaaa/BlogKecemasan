@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psikoedukasi: Mengelola Stres Mahasiswa</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+/* ======== THEME COLOR ======== */
+:root {
+    --primary: #6A0DAD;
+    --primary-light: #b57ce6;
+    --text-dark: #2c2c2c;
+    --bg-light: #f7f0fb;
+    --white: #ffffff;
+}
+
+/* ======== GLOBAL ======== */
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #f3e8ff, #ffffff);
+    margin: 0;
+    padding: 0;
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+/* ======== HEADER ======== */
+header {
+    background: linear-gradient(135deg, #6A0DAD, #b57ce6);
+    color: var(--white);
+    padding: 25px 10%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+header img {
+    height: 70px;
+    filter: drop-shadow(0 3px 4px rgba(0,0,0,0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Logo animation */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+
+/* ======== CONTENT ======== */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    background: var(--white);
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ======== EFFECT VISUAL OPSI 2 (GLASS BLUR) ======== */
+.img-glass {
+    width: 100%;
+    border-radius: 18px;
+    margin: 20px 0;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.img-glass:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+h2 {
+    color: var(--primary);
+    margin-top: 30px;
+    font-weight: 700;
+}
+
+/* Responsive text */
+p, li {
+    font-size: 1rem;
+}
+
+/* ======== FOOTER ======== */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: var(--primary);
+    color: var(--white);
+    margin-top: 50px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    box-shadow: 0 -6px 12px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- ======== HEADER ======== -->
+<header>
+    <img src="logoPsikologi.png" alt="Logo Psikologi">
+    <h1>Psikoedukasi: Mengelola Stres pada Mahasiswa Semester 1</h1>
+</header>
+
+<!-- ======== CONTENT ======== -->
+<div class="container">
+
+    <p>
+        Masuk ke dunia perkuliahan adalah salah satu fase transisi terbesar dalam perkembangan dewasa muda. 
+        Pada tahap ini, mahasiswa dituntut untuk mandiri, menyesuaikan diri dengan lingkungan baru, sistem belajar 
+        baru, serta tuntutan akademik yang meningkat. Semua perubahan ini dapat memicu stres, terutama pada 
+        mahasiswa semester pertama yang sedang dalam tahap adaptasi. 
+    </p>
+
+    <!-- ======== GAMBAR DENGAN EFEK VISUAL OPSI 2 ======== -->
+    <img src="stress.png" class="img-glass" alt="Ilustrasi Mahasiswa Stres">
+
+    <h2>1. Apa Itu Stres?</h2>
+    <p>
+        Stres adalah respon alami tubuh ketika menghadapi tekanan atau tuntutan tertentu. Stres tidak selalu buruk —
+        pada tingkat tertentu, stres membantu kita tetap fokus dan termotivasi. Namun, stres yang berlebihan 
+        atau tidak terkontrol dapat mengganggu kesehatan fisik, emosi, dan prestasi akademik.
+    </p>
+
+    <h2>2. Gejala Stres pada Mahasiswa</h2>
+    <p>
+        Stres dapat muncul dalam berbagai bentuk. Berikut 4 kategori utama gejalanya:
+    </p>
+    <ul>
+        <li><strong>Fisik:</strong> sakit kepala, tegang otot, jantung berdebar, mudah lelah.</li>
+        <li><strong>Emosional:</strong> cemas, mudah marah, merasa kewalahan, sering khawatir.</li>
+        <li><strong>Kognitif:</strong> sulit fokus, lupa, overthinking, sulit mengambil keputusan.</li>
+        <li><strong>Perilaku:</strong> menunda tugas, menarik diri, makan berlebih atau kurang, begadang.</li>
+    </ul>
+
+    <h2>3. Penyebab Umum Stres pada Mahasiswa Semester 1</h2>
+    <ul>
+        <li><strong>Adaptasi lingkungan baru</strong> — mahasiswa harus menyesuaikan diri dengan suasana kampus, teman baru, dan kultur akademik.</li>
+        <li><strong>Tuntutan akademik meningkat</strong> — lebih banyak tugas, presentasi, dan materi yang kompleks.</li>
+        <li><strong>Manajemen waktu kurang baik</strong> — kebebasan yang besar membuat sebagian mahasiswa sulit mengatur waktu.</li>
+        <li><strong>Ekspektasi diri dan orang lain</strong> — tekanan untuk selalu berprestasi dapat menjadi beban mental.</li>
+        <li><strong>Kurang dukungan sosial</strong> — terutama bagi mahasiswa rantau atau yang sulit bersosialisasi.</li>
+        <li><strong>Masalah finansial</strong> — kebutuhan hidup dan biaya pendidikan dapat memicu stres tambahan.</li>
+    </ul>
+
+    <h2>4. Dampak Stres Terhadap Akademik & Kesehatan</h2>
+    <p>
+        Jika tidak dikelola, stres dapat berdampak negatif seperti:
+    </p>
+    <ul>
+        <li>Menurunnya prestasi akademik</li>
+        <li>Gangguan tidur dan kelelahan</li>
+        <li>Burnout atau kejenuhan belajar</li>
+        <li>Meningkatnya kecemasan atau depresi</li>
+        <li>Penurunan motivasi dan minat belajar</li>
+    </ul>
+
+    <h2>5. Strategi Mengatasi Stres</h2>
+    <p>Berikut beberapa strategi yang terbukti efektif menurut psikologi pendidikan:</p>
+    <ul>
+        <li><strong>Manajemen waktu:</strong> gunakan metode seperti time blocking, jadwal harian, atau pomodoro.</li>
+        <li><strong>Mengenali pikiran negatif:</strong> gunakan teknik CBT sederhana untuk mengganti pikiran irasional.</li>
+        <li><strong>Menjaga kesehatan fisik:</strong> tidur cukup 7-8 jam, konsumsi makanan bergizi, dan olahraga ringan.</li>
+        <li><strong>Mengembangkan support system:</strong> bergabung dengan organisasi, mencari teman belajar, atau komunitas kampus.</li>
+        <li><strong>Relaksasi:</strong> meditasi, pernapasan 4-7-8, grounding 5-4-3-2-1.</li>
+    </ul>
+
+    <h2>6. Kapan Perlu Mencari Bantuan Profesional?</h2>
+    <p>Konsultasi dengan psikolog bila mengalami:</p>
+    <ul>
+        <li>Stres berlangsung lebih dari 2 minggu</li>
+        <li>Mengganggu tidur atau makan</li>
+        <li>Menurunnya prestasi drastis</li>
+        <li>Merasa kewalahan terus-menerus</li>
+        <li>Muncul pikiran menyakiti diri</li>
+    </ul>
+
+    <h2>7. Grafik Hasil Analisis Kecemasan (20 Responden)</h2>
+    <p>
+        Grafik berikut menunjukkan kategori kecemasan responden (Normal vs Sedang/Tinggi).
+    </p>
+
+    <!-- ANIMATED GRAPH -->
+    <canvas id="grafikKecemasan"></canvas>
+
+</div>
+
+
+<canvas id="grafikKecemasan"></canvas>
+
+<script>
+const ctx = document.getElementById('grafikKecemasan').getContext('2d');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [
+            'Melia','Shevia','Adyaa','Nurin','Chava',
+            'Niko','Andrew', 'Moana','Bella','Kelly',
+            'Raffy','Alshad','Faizar','Hamish','Fellya',
+            'Zefanya', 'Felix', 'Ethes','Helen' , 'Marvel'
+        ],
+        datasets: [{
+            label: 'Total Skor',
+            data: [82, 79, 78, 72, 81, 82, 81, 75, 72, 77, 77, 90, 83, 88, 78, 71, 79, 75, 86, 84],
+            backgroundColor: 'rgba(128, 90, 168, 0.7)', /* Ungu pastel */
+            borderColor: 'rgba(128, 90, 168, 1)',
+            borderWidth: 1,
+            borderRadius: 6,
+            barThickness: 20,        /* Biar batangnya langsing seperti Excel */
+            hoverBackgroundColor: 'rgba(128, 90, 168, 1)'
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: true,
+                labels: {
+                    boxWidth: 20,
+                    font: { size: 12 }
+                }
+            },
+            title: {
+                display: true,
+                text: 'Total Skor per Responden',
+                font: { size: 18, weight: 'bold' }
+            }
+        },
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 100,
+                ticks: { stepSize: 10 }
+            }
+        },
+        animation: {
+            duration: 1500,
+            easing: 'easeOutQuart'
+        }
+    }
+});
+</script>
+
+<!-- ======== FOOTER ======== -->
+<footer>
+    &copy; 2025 Psikoedukasi Mahasiswa | Blog Psikologi  |  Raisya Julia Riani
+</footer>
+
+</body>
+</html>
